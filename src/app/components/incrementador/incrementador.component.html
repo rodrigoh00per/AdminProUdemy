@@ -1,0 +1,19 @@
+ <div class="col-6">
+    <div class="card">
+      <div class="card-body">
+<h3>{{leyenda}}</h3>
+<!-- <h4 style="color:red">{{porcentaje}} </h4> -->
+<div class="input-group mb-3">
+  <div class="input-group-prepend" id="button-addon3">
+    <input type="number" name="porcentaje" #txtProgress 
+    (ngModelChange)="onChanges($event)" 
+     [(ngModel)]="porcentaje" id="" min="1" max="100">
+    <button on class="btn btn-outline-info" (click)="cambiarValor(-5)" type="button">
+      <i class="mdi mdi-minus"></i>
+    </button>
+    <button class="btn btn-outline-info" (click)="cambiarValor(+5)" type="button">
+      <i class="mdi mdi-plus"></i>
+    </button>
+  </div>
+</div>
+

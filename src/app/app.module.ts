@@ -10,6 +10,8 @@ import { NopagefoundComponent } from "./shared/nopagefound/nopagefound.component
 
 //MODULOS
 import { PageModule } from "./pages/pages.module";
+import { IncrementadorComponent } from "./components/incrementador/incrementador.component";
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -17,8 +19,15 @@ import { PageModule } from "./pages/pages.module";
     LoginComponent,
     RegisterComponent,
     NopagefoundComponent
+    // IncrementadorComponent
   ],
-  imports: [BrowserModule, appRouting, PageModule],
+  imports: [
+    BrowserModule,
+    appRouting,
+    PageModule,
+
+    FormsModule //temporal
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
