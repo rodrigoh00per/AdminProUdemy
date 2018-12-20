@@ -12,6 +12,7 @@ import { NopagefoundComponent } from "./shared/nopagefound/nopagefound.component
 import { PageModule } from "./pages/pages.module";
 import { IncrementadorComponent } from "./components/incrementador/incrementador.component";
 import { FormsModule } from "@angular/forms";
+import { ServiceModule } from "./services/service.module";
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { FormsModule } from "@angular/forms";
     BrowserModule,
     appRouting,
     PageModule,
+    ServiceModule,
 
     FormsModule //temporal
   ],
