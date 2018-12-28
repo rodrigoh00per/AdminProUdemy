@@ -7,11 +7,13 @@ import { AccountSettingsComponent } from "./account-settings/account-settings.co
 import { PromesasComponent } from "./promesas/promesas.component";
 import { RxjsComponent } from "./rxjs/rxjs.component";
 
+import { LoginGuardGuard } from "../services/service.index";
+
 const routes: Routes = [
   {
     path: "",
     component: PagesComponent,
-
+    canActivate: [LoginGuardGuard],
     children: [
       {
         path: "dashboard",
@@ -33,7 +35,11 @@ const routes: Routes = [
         component: PromesasComponent,
         data: { titulo: "Promesas" }
       },
-      { path: "rxjs", component: RxjsComponent, data: { titulo: "Rxjs(Observables)" } },
+      {
+        path: "rxjs",
+        component: RxjsComponent,
+        data: { titulo: "Rxjs(Observables)" }
+      },
       {
         path: "account-settings",
         component: AccountSettingsComponent,

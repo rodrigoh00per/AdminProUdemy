@@ -1,3 +1,7 @@
-#themecolors  li .selector {
+#themecolors li .selector {
+    cursor: pointer;
+}
+
+.pointer {
     cursor: pointer;
 }

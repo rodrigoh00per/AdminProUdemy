@@ -11,7 +11,7 @@ import { NopagefoundComponent } from "./shared/nopagefound/nopagefound.component
 //MODULOS
 import { PageModule } from "./pages/pages.module";
 import { IncrementadorComponent } from "./components/incrementador/incrementador.component";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ServiceModule } from "./services/service.module";
 
 @NgModule({
@@ -27,7 +27,7 @@ import { ServiceModule } from "./services/service.module";
     appRouting,
     PageModule,
     ServiceModule,
-
+    ReactiveFormsModule,
     FormsModule //temporal
   ],
   providers: [],
