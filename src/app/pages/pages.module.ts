@@ -11,10 +11,15 @@ import { FormsModule } from "@angular/forms";
 import { IncrementadorComponent } from "../components/incrementador/incrementador.component";
 
 import { ChartsModule } from "ng2-charts";
-import { GraficoDonaComponent } from '../components/grafico-dona/grafico-dona.component';
-import { AccountSettingsComponent } from './account-settings/account-settings.component';
-import { PromesasComponent } from './promesas/promesas.component';
-import { RxjsComponent } from './rxjs/rxjs.component';
+import { GraficoDonaComponent } from "../components/grafico-dona/grafico-dona.component";
+import { AccountSettingsComponent } from "./account-settings/account-settings.component";
+import { PromesasComponent } from "./promesas/promesas.component";
+import { RxjsComponent } from "./rxjs/rxjs.component";
+
+//PIPES
+import { PipesModule } from "../pipes/pipes.module";
+import { ProfileComponent } from "./profile/profile.component";
+import { BrowserModule } from "@angular/platform-browser";
 
 @NgModule({
   declarations: [
@@ -26,7 +31,8 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     GraficoDonaComponent,
     AccountSettingsComponent,
     PromesasComponent,
-    RxjsComponent
+    RxjsComponent,
+    ProfileComponent
   ],
 
   exports: [
@@ -37,6 +43,14 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     IncrementadorComponent, //temporal,
     ChartsModule
   ],
-  imports: [SharedModule, pagesRoutes, FormsModule, ChartsModule,CommonModule]
+  imports: [
+    BrowserModule,
+    SharedModule,
+    pagesRoutes,
+    FormsModule,
+    ChartsModule,
+    CommonModule,
+    PipesModule //MODULO DE PIPES COMO CARGA DE IMAGENES COSAS ASI
+  ]
 })
 export class PageModule {}

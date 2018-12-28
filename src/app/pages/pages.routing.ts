@@ -8,6 +8,7 @@ import { PromesasComponent } from "./promesas/promesas.component";
 import { RxjsComponent } from "./rxjs/rxjs.component";
 
 import { LoginGuardGuard } from "../services/service.index";
+import { ProfileComponent } from "./profile/profile.component";
 
 const routes: Routes = [
   {
@@ -44,6 +45,11 @@ const routes: Routes = [
         path: "account-settings",
         component: AccountSettingsComponent,
         data: { titulo: "Ajustes(Cambiar Tema)" }
+      },
+      {
+        path: "perfil",
+        component: ProfileComponent,
+        data: { titulo: "Perfil del Usuario" }
       },
       { path: "", pathMatch: "full", redirectTo: "/dashboard" }
     ]
