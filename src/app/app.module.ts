@@ -14,7 +14,6 @@ import { IncrementadorComponent } from "./components/incrementador/incrementador
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ServiceModule } from "./services/service.module";
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +30,6 @@ import { ServiceModule } from "./services/service.module";
     ServiceModule,
     ReactiveFormsModule,
     FormsModule //temporal
-   
   ],
   providers: [],
   bootstrap: [AppComponent]

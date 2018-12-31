@@ -7,6 +7,7 @@ import "rxjs/add/operator/map";
 import { Observable } from "rxjs";
 import { Router } from "@angular/router";
 import { SubirArchivoService } from "../subir_archivo/subir-archivo.service";
+import { ModalUploadService } from "src/app/components/modal-upload/modal-upload.service";
 
 @Injectable()
 export class UsuarioService {
@@ -86,8 +87,10 @@ export class UsuarioService {
     let url = URL_SERVICIOS + "usuario/" + usuario._id + "/?token=";
     url = url += this.token;
     return this._http.put(url, usuario).map((resp: any) => {
+      if (usuario._id === this.usuario._id) {
+        this.guardarStorage(resp.usuario.id, this.token, resp.usuario);
+      }
       swal("Usuario Actualizado", usuario.nombre, "success");
-      this.guardarStorage(resp.usuario.id, this.token, resp.usuario);
       return true;
     });
   }
@@ -99,10 +102,33 @@ export class UsuarioService {
         this.usuario.img = resp.usuario.img;
         swal("Imagen Actualizada", this.usuario.nombre, "success");
         this.guardarStorage(this.usuario._id, this.token, this.usuario);
-        console.log(resp);
+        /* console.log(resp); */
       })
       .catch(err => {
         console.log(err);
       });
+  }
+  //ESTE METODO ES PARA TRAER TODOS
+  cargarUsuarios(desde: number = 0) {
+    let url = `${URL_SERVICIOS}usuario/?desde=${desde}`;
+    return this._http.get(url);
+  }
+
+  buscarUsuarios(termino: string) {
+    http: let url = `${URL_SERVICIOS}busqueda/coleccion/usuarios/${termino}`;
+    return this._http.get(url).map((resp: any) => {
+      return resp.usuarios;
+    });
+  }
+  borrarUsuario(id: string) {
+    let url = `${URL_SERVICIOS}usuario/${id}/?token=${this.token}`;
+    return this._http.delete(url).map(resp => {
+      swal(
+        "Usuario borrado",
+        "El usuario ha sido eliminado correctamente",
+        "success"
+      );
+      return true;
+    });
   }
 }

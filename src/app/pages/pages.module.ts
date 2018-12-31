@@ -20,6 +20,8 @@ import { RxjsComponent } from "./rxjs/rxjs.component";
 import { PipesModule } from "../pipes/pipes.module";
 import { ProfileComponent } from "./profile/profile.component";
 import { BrowserModule } from "@angular/platform-browser";
+import { UsuariosComponent } from "./usuarios/usuarios.component";
+import { ModalUploadComponent } from "../components/modal-upload/modal-upload.component";
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { BrowserModule } from "@angular/platform-browser";
     AccountSettingsComponent,
     PromesasComponent,
     RxjsComponent,
-    ProfileComponent
+    ProfileComponent,
+    UsuariosComponent,
+    ModalUploadComponent
   ],
 
   exports: [
@@ -41,7 +45,8 @@ import { BrowserModule } from "@angular/platform-browser";
     Graficas1Component,
     PagesComponent,
     IncrementadorComponent, //temporal,
-    ChartsModule
+    ChartsModule,
+    ModalUploadComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +55,8 @@ import { BrowserModule } from "@angular/platform-browser";
     FormsModule,
     ChartsModule,
     CommonModule,
-    PipesModule //MODULO DE PIPES COMO CARGA DE IMAGENES COSAS ASI
+    PipesModule//MODULO DE PIPES COMO CARGA DE IMAGENES COSAS ASI
+ 
   ]
 })
 export class PageModule {}

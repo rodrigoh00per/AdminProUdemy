@@ -1,0 +1,49 @@
+<div class="fondo-negro" [ngClass]="_modalUploadService.oculto">
+  <div class="modal" style="display:block" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Cambiar Imagen del Usuario</h5>
+          <button
+            type="button"
+            class="close"
+            (click)="cerrarModal()"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div *ngIf="!imagenTemp" class="imagen-modal">
+            <img class="imagen-modal" [src]="xxxxx | imagen" alt="" />
+          </div>
+          <div *ngIf="imagenTemp">
+            <img [src]="imagenTemp" class="imagen-modal" alt="" />
+          </div>
+          <input
+            type="file" #inputdelmodal
+            (change)="imagenEscucharCambios($event.target.files[0])"
+          />
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            [disabled]="!imagenTemp"
+            class="btn btn-primary"
+            (click)="subirImagen()"
+          >
+            Cambiar Imagen
+          </button>
+          <button
+            type="button"
+            class="btn btn-secondary"
+            (click)="cerrarModal()"
+          >
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
