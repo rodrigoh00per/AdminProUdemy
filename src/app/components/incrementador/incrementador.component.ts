@@ -20,7 +20,7 @@ export class IncrementadorComponent implements OnInit {
 
   @Input() leyenda: string = "Leyenda";
   @Input() porcentaje: number = 50;
-  @Output() PasaleIncrementador: EventEmitter<number> = new EventEmitter(); //esto nos ayuda A PASAR LOS DATOS AL PADRE
+  @Output() PasaleIncrementadorsin: EventEmitter<number> = new EventEmitter(); //esto nos ayuda A PASAR LOS DATOS AL PADRE
 
   @ViewChild("txtProgress") txtProgress: ElementRef;
   constructor() {}
@@ -35,7 +35,7 @@ export class IncrementadorComponent implements OnInit {
     }
     this.porcentaje = this.porcentaje + valor;
 
-    this.PasaleIncrementador.emit(this.porcentaje); //VAMOS A EMITIR ESTE VLOR
+    this.PasaleIncrementadorsin.emit(this.porcentaje); //VAMOS A EMITIR ESTE VLOR
   }
 
   ngOnInit() {
@@ -59,6 +59,6 @@ export class IncrementadorComponent implements OnInit {
 
     this.txtProgress.nativeElement.focus();
 
-    this.PasaleIncrementador.emit(valornuevo);
+    this.PasaleIncrementadorsin.emit(valornuevo);
   }
 }

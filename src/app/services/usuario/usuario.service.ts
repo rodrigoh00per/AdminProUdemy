@@ -115,7 +115,7 @@ export class UsuarioService {
   }
 
   buscarUsuarios(termino: string) {
-    http: let url = `${URL_SERVICIOS}busqueda/coleccion/usuarios/${termino}`;
+   let url = `${URL_SERVICIOS}busqueda/coleccion/usuarios/${termino}`;
     return this._http.get(url).map((resp: any) => {
       return resp.usuarios;
     });

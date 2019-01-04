@@ -15,11 +15,11 @@ export class ProgressComponent implements OnInit {
 
   }
 
-  actualizarvalor(event:number){
+   actualizarvalor(event:number){
   console.log("Evento ",event);
   this.porcentaje1 = event;
 
-}
+} 
 
   ngOnInit() {}
 
