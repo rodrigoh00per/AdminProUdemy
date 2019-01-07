@@ -9,7 +9,8 @@ import {
   SubirArchivoService,
   ModalUploadService,
   HospitalService,
-  MedicoService
+  MedicoService,
+  AdminGuard
 } from "./service.index";
 import { HttpClientModule } from "@angular/common/http";
 
@@ -22,6 +23,7 @@ import { HttpClientModule } from "@angular/common/http";
     SharedService,
     UsuarioService,
     LoginGuardGuard,
+    AdminGuard,
     SubirArchivoService,
     ModalUploadService,
     HospitalService,

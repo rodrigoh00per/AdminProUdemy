@@ -7,12 +7,13 @@ import { AccountSettingsComponent } from "./account-settings/account-settings.co
 import { PromesasComponent } from "./promesas/promesas.component";
 import { RxjsComponent } from "./rxjs/rxjs.component";
 
-import { LoginGuardGuard } from "../services/service.index";
+import { LoginGuardGuard, AdminGuard } from "../services/service.index";
 import { ProfileComponent } from "./profile/profile.component";
 import { UsuariosComponent } from "./usuarios/usuarios.component";
 import { HospitalesComponent } from "./hospitales/hospitales/hospitales.component";
-import { MedicosComponent } from './medicos/medicos.component';
-import { MedicoComponent } from './medicos/medico.component';
+import { MedicosComponent } from "./medicos/medicos.component";
+import { MedicoComponent } from "./medicos/medico.component";
+import { BusquedaComponent } from "./busqueda/busqueda.component";
 
 const routes: Routes = [
   {
@@ -56,10 +57,17 @@ const routes: Routes = [
         data: { titulo: "Perfil del Usuario" }
       },
 
+      {
+        path: "busqueda/:termino",
+        component: BusquedaComponent,
+        data: { titulo: "Buscador" }
+      },
+
       //MANTENIMIENTOS
 
       {
         path: "usuarios",
+        canActivate: [AdminGuard],
         component: UsuariosComponent,
         data: { titulo: "Mantenimiento de Usuarios" }
       },
