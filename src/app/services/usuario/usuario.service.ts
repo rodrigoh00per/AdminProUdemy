@@ -168,4 +168,30 @@ export class UsuarioService {
       return true;
     });
   }
+
+  //===========================================
+  //===========================================
+  //===============RENUEVA TOKEN==============
+  //===========================================
+
+  renuevaToken() {
+    let url = `${URL_SERVICIOS}login/renuevatoken/?token=${this.token}`;
+    return this._http
+      .get(url)
+      .map((resp: any) => {
+        this.token = resp.token;
+        localStorage.setItem("token", this.token);
+        console.log("token renovado");
+        return true;
+      })
+      .catch(err => {
+        swal(
+          "No se puedo renovar token",
+          "No fue posible posible renovar token",
+          "error"
+        );
+        this._router.navigate(["/login"]);
+        return Observable.throw(err);
+      });
+  }
 }

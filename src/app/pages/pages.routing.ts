@@ -7,7 +7,11 @@ import { AccountSettingsComponent } from "./account-settings/account-settings.co
 import { PromesasComponent } from "./promesas/promesas.component";
 import { RxjsComponent } from "./rxjs/rxjs.component";
 
-import { LoginGuardGuard, AdminGuard } from "../services/service.index";
+import {
+  LoginGuardGuard,
+  AdminGuard,
+  VerificaTokenGuard
+} from "../services/service.index";
 import { ProfileComponent } from "./profile/profile.component";
 import { UsuariosComponent } from "./usuarios/usuarios.component";
 import { HospitalesComponent } from "./hospitales/hospitales/hospitales.component";
@@ -17,78 +21,79 @@ import { BusquedaComponent } from "./busqueda/busqueda.component";
 
 const routes: Routes = [
   {
-    path: "",
-    component: PagesComponent,
+    /*     path: "",
+    component: PagesComponent,   //AQUI DEJARON DE ESTA AQUI DEBIDO A QUE YA SE PUSIERON EN EL APP.MODULE
     canActivate: [LoginGuardGuard],
     children: [
-      {
-        path: "dashboard",
-        component: DashboardComponent,
-        data: { titulo: "Dashboard" }
-      },
-      {
-        path: "progress",
-        component: ProgressComponent,
-        data: { titulo: "Progress" }
-      },
-      {
-        path: "graficas1",
-        component: Graficas1Component,
-        data: { titulo: "Graficas" }
-      },
-      {
-        path: "promesas",
-        component: PromesasComponent,
-        data: { titulo: "Promesas" }
-      },
-      {
-        path: "rxjs",
-        component: RxjsComponent,
-        data: { titulo: "Rxjs(Observables)" }
-      },
-      {
-        path: "account-settings",
-        component: AccountSettingsComponent,
-        data: { titulo: "Ajustes(Cambiar Tema)" }
-      },
-      {
-        path: "perfil",
-        component: ProfileComponent,
-        data: { titulo: "Perfil del Usuario" }
-      },
+      { */
+    path: "dashboard",
+    component: DashboardComponent,
+    canActivate: [VerificaTokenGuard],
+    data: { titulo: "Dashboard" }
+  },
+  {
+    path: "progress",
+    component: ProgressComponent,
+    data: { titulo: "Progress" }
+  },
+  {
+    path: "graficas1",
+    component: Graficas1Component,
+    data: { titulo: "Graficas" }
+  },
+  {
+    path: "promesas",
+    component: PromesasComponent,
+    data: { titulo: "Promesas" }
+  },
+  {
+    path: "rxjs",
+    component: RxjsComponent,
+    data: { titulo: "Rxjs(Observables)" }
+  },
+  {
+    path: "account-settings",
+    component: AccountSettingsComponent,
+    data: { titulo: "Ajustes(Cambiar Tema)" }
+  },
+  {
+    path: "perfil",
+    component: ProfileComponent,
+    data: { titulo: "Perfil del Usuario" }
+  },
 
-      {
-        path: "busqueda/:termino",
-        component: BusquedaComponent,
-        data: { titulo: "Buscador" }
-      },
+  {
+    path: "busqueda/:termino",
+    component: BusquedaComponent,
+    data: { titulo: "Buscador" }
+  },
 
-      //MANTENIMIENTOS
+  //MANTENIMIENTOS
 
-      {
-        path: "usuarios",
-        canActivate: [AdminGuard],
-        component: UsuariosComponent,
-        data: { titulo: "Mantenimiento de Usuarios" }
-      },
-      {
-        path: "hospitales",
-        component: HospitalesComponent,
-        data: { titulo: "Mantenimiento de Hospitales" }
-      },
-      {
-        path: "medicos",
-        component: MedicosComponent,
-        data: { titulo: "Mantenimiento de Medicos" }
-      },
-      {
-        path: "medico/:id",
-        component: MedicoComponent,
-        data: { titulo: "Medico Datos" }
-      },
-      { path: "", pathMatch: "full", redirectTo: "/dashboard" }
-    ]
-  }
+  {
+    path: "usuarios",
+    canActivate: [AdminGuard],
+    component: UsuariosComponent,
+    data: { titulo: "Mantenimiento de Usuarios" }
+  },
+  {
+    path: "hospitales",
+    component: HospitalesComponent,
+    data: { titulo: "Mantenimiento de Hospitales" }
+  },
+  {
+    path: "medicos",
+    component: MedicosComponent,
+    data: { titulo: "Mantenimiento de Medicos" }
+  },
+  {
+    path: "medico/:id",
+    component: MedicoComponent,
+    data: { titulo: "Medico Datos" }
+  },
+  { path: "", pathMatch: "full", redirectTo: "/dashboard" }
+  /*    ]
+  } */
 ];
 
 export const pagesRoutes = RouterModule.forChild(routes);

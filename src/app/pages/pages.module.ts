@@ -22,17 +22,17 @@ import { ProfileComponent } from "./profile/profile.component";
 import { BrowserModule } from "@angular/platform-browser";
 import { UsuariosComponent } from "./usuarios/usuarios.component";
 import { ModalUploadComponent } from "../components/modal-upload/modal-upload.component";
-import { HospitalesComponent } from './hospitales/hospitales/hospitales.component';
-import { MedicosComponent } from './medicos/medicos.component';
-import { MedicoComponent } from './medicos/medico.component';
-import { BusquedaComponent } from './busqueda/busqueda.component';
+import { HospitalesComponent } from "./hospitales/hospitales/hospitales.component";
+import { MedicosComponent } from "./medicos/medicos.component";
+import { MedicoComponent } from "./medicos/medico.component";
+import { BusquedaComponent } from "./busqueda/busqueda.component";
 
 @NgModule({
   declarations: [
     DashboardComponent,
     ProgressComponent,
     Graficas1Component,
-    PagesComponent,
+    /*  PagesComponent, */
     IncrementadorComponent,
     GraficoDonaComponent,
     AccountSettingsComponent,
@@ -40,7 +40,7 @@ import { BusquedaComponent } from './busqueda/busqueda.component';
     RxjsComponent,
     ProfileComponent,
     UsuariosComponent,
-    ModalUploadComponent,
+    /* ModalUploadComponent, */
     HospitalesComponent,
     MedicosComponent,
     MedicoComponent,
@@ -51,20 +51,18 @@ import { BusquedaComponent } from './busqueda/busqueda.component';
     DashboardComponent,
     ProgressComponent,
     Graficas1Component,
-    PagesComponent,
+    /*  PagesComponent, */
     IncrementadorComponent, //temporal,
-    ChartsModule,
-    ModalUploadComponent
+    ChartsModule
+    /*  ModalUploadComponent */
   ],
   imports: [
-    BrowserModule,
     SharedModule,
     pagesRoutes,
     FormsModule,
     ChartsModule,
     CommonModule,
-    PipesModule//MODULO DE PIPES COMO CARGA DE IMAGENES COSAS ASI
- 
+    PipesModule //MODULO DE PIPES COMO CARGA DE IMAGENES COSAS ASI
   ]
 })
 export class PageModule {}

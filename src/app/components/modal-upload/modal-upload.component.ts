@@ -11,13 +11,13 @@ import swal from "sweetalert";
   styles: []
 })
 export class ModalUploadComponent implements OnInit {
-  private imagenCargar: File;
-  private imagenTemp;
+  public imagenCargar: File;
+  public imagenTemp;
   @ViewChild("inputdelmodal") inputdelmodal: ElementRef;
 
   constructor(
-    private _subirArchivoService: SubirArchivoService,
-    private _modalUploadService: ModalUploadService //ESTO NOS DEJA HAER LA COMUNICACION CON OTROS COMPONENTES SI NO SERIA UN DESMADRE
+    public _subirArchivoService: SubirArchivoService,
+    public _modalUploadService: ModalUploadService //ESTO NOS DEJA HAER LA COMUNICACION CON OTROS COMPONENTES SI NO SERIA UN DESMADRE
   ) {
     console.log("modal listo");
   }

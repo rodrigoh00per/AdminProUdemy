@@ -8,7 +8,7 @@ import { MedicoService } from "src/app/services/service.index";
   styles: []
 })
 export class MedicosComponent implements OnInit {
-  private cargando;
+  public cargando;
   private medicos: Medico[];
   constructor(private _medicoService: MedicoService) {
     this.cargando = false;

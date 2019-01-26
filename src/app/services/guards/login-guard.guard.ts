@@ -18,7 +18,7 @@ export class LoginGuardGuard implements CanActivate {
   ) {}
   canActivate(): boolean {
     if (this._usuarioService.estaLogueado()) {
-      console.log("paso sin pedos todo el merequetengue");
+     /*  console.log("paso sin pedos todo el merequetengue"); */
       return true;
     } else {
       this._router.navigate(["/login"]);

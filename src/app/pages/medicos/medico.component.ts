@@ -15,9 +15,9 @@ import { Router, ActivatedRoute } from "@angular/router";
   styles: []
 })
 export class MedicoComponent implements OnInit {
-  private hospitales: Hospital[];
-  private medico: Medico;
-  private hospital: Hospital;
+  public hospitales: Hospital[];
+  public medico: Medico;
+  public hospital: Hospital;
   constructor(
     private _hospitalService: HospitalService,
     private _medicoService: MedicoService,

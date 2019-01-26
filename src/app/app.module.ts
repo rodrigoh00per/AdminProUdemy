@@ -13,23 +13,28 @@ import { PageModule } from "./pages/pages.module";
 import { IncrementadorComponent } from "./components/incrementador/incrementador.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ServiceModule } from "./services/service.module";
+import { PagesComponent } from "./pages/pages.component";
+import { SharedModule } from "./shared/shared.module";
+import { CommonModule } from "@angular/common";
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    NopagefoundComponent
+    NopagefoundComponent,
+    PagesComponent
 
     // IncrementadorComponent
   ],
   imports: [
     BrowserModule,
-    appRouting,
-    PageModule,
-    ServiceModule,
+    appRouting, // SE QUITO DEBIDO A QUE ESTE SE CARGA DE FORMA DINAMICA NO ESTATICA
+    /*  PageModule, */ ServiceModule,
     ReactiveFormsModule,
-    FormsModule //temporal
+    FormsModule, //temporal,
+    SharedModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

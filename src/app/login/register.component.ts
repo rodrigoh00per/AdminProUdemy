@@ -11,7 +11,7 @@ import { Router } from "@angular/router";
   styleUrls: ["./login.component.css"]
 })
 export class RegisterComponent implements OnInit {
-  private forma: FormGroup;
+  public forma: FormGroup;
   //ES IMPORTANTE IMPORTAR LOS REACTIVE FORMS
   constructor(
     private _usuarioService: UsuarioService,

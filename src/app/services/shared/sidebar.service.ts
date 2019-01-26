@@ -6,7 +6,7 @@ import { THIS_EXPR } from "@angular/compiler/src/output/output_ast";
 export class SidebarService {
   menu = [];
 
-  constructor(private _usuarioService: UsuarioService) {}
+  constructor(public _usuarioService: UsuarioService) {}
   cargarMenu() {
     this.menu = this._usuarioService.menu;
   }

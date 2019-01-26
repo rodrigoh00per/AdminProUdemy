@@ -9,10 +9,10 @@ import swal from "sweetalert";
   styleUrls: ["./profile.component.css"]
 })
 export class ProfileComponent implements OnInit {
-  private usuario: Usuario;
-  private imagenCargar: File;
-  private imagenTemp;
-  constructor(private _usuarioService: UsuarioService) {
+  public usuario: Usuario;
+  public imagenCargar: File;
+  public imagenTemp;
+  constructor(public _usuarioService: UsuarioService) {
     this.usuario = this._usuarioService.usuario;
   }
 
@@ -47,7 +47,7 @@ export class ProfileComponent implements OnInit {
     let reader = new FileReader(); //ESTE ES PARA SACAR EL URL TEMP DE LA IMAGEN
     reader.readAsDataURL(archivo);
     reader.onloadend = () => {
-     this.imagenTemp=reader.result;
+      this.imagenTemp = reader.result;
     };
     console.log(this.imagenCargar);
   }

@@ -14,11 +14,9 @@ export class LoginComponent implements OnInit {
   recuerdame: boolean = false;
   email: string;
   auth2: any;
+  password: string;
 
-  constructor(
-    private _router: Router,
-    private _usuarioService: UsuarioService
-  ) {}
+  constructor(public _router: Router, public _usuarioService: UsuarioService) {}
 
   ngOnInit() {
     this.email = localStorage.getItem("email") || "";

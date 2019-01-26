@@ -12,9 +12,9 @@ import { Hospital } from "src/app/models/hospital.model";
   styles: []
 })
 export class BusquedaComponent implements OnInit {
-  private usuarios: Usuario[];
-  private medicos: Medico[];
-  private hospitales: Hospital[];
+  public usuarios: Usuario[];
+  public medicos: Medico[];
+  public hospitales: Hospital[];
   constructor(
     private _activatedRoute: ActivatedRoute,
     private _http: HttpClient
